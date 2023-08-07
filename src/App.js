@@ -4,8 +4,12 @@ import ProductListPage from './pages/ProductListPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import CardPage from './pages/CardPage';
+import CartPage from './pages/CartPage';
+
+// Components
 import ProtectedRoutesComponent from './components/ProtectedRoutesComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
 
 // Protected User Pages
 import UserProfilePage from './pages/user/UserProfilePage';
@@ -27,11 +31,12 @@ import AdminUsersPage from './pages/admin/AdminUsersPage';
 function App() {
   return (
     <BrowserRouter>
+      <HeaderComponent />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/product-list' element={<ProductListPage />} />
         <Route path='/product-detail/:id' element={<ProductDetailsPage />} />
-        <Route path='/card' element={<CardPage />} />
+        <Route path='/cart' element={<CartPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
 
@@ -70,6 +75,7 @@ function App() {
           <Route path='/admin/users' element={<AdminUsersPage />} />
         </Route>
       </Routes>
+      <FooterComponent />
     </BrowserRouter>
   );
 }
