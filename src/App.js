@@ -11,6 +11,9 @@ import ProtectedRoutesComponent from './components/ProtectedRoutesComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
 
+// User Components
+import RouteswithChatComponent from './components/user/RouteswithChatComponent';
+
 // Protected User Pages
 import UserProfilePage from './pages/user/UserProfilePage';
 import UserOrdersPage from './pages/user/UserOrdersPage';
@@ -33,24 +36,30 @@ function App() {
     <BrowserRouter>
       <HeaderComponent />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/product-list' element={<ProductListPage />} />
-        <Route path='/product-detail/:id' element={<ProductDetailsPage />} />
-        <Route path='/cart' element={<CartPage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<RegisterPage />} />
+        <Route element={<RouteswithChatComponent />}>
+          {/* Public Routes */}
+          <Route path='/' element={<HomePage />} />
+          <Route path='/product-list' element={<ProductListPage />} />
+          <Route path='/product-detail/:id' element={<ProductDetailsPage />} />
+          <Route path='/cart' element={<CartPage />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/register' element={<RegisterPage />} />
 
-        <Route path='*' element='Page not exist 404' />
+          <Route path='*' element='Page not exist 404' />
 
-        {/* User Protected Routes */}
-        <Route element={<ProtectedRoutesComponent admin={false} />}>
-          <Route path='/user' element={<UserProfilePage />} />
-          <Route path='/user/my-order' element={<UserOrdersPage />} />
-          <Route path='/user/cart-details' element={<UserCartDetailsPage />} />
-          <Route
-            path='/user/order-details'
-            element={<UserOrderDetailsPage />}
-          />
+          {/* User Protected Routes */}
+          <Route element={<ProtectedRoutesComponent admin={false} />}>
+            <Route path='/user' element={<UserProfilePage />} />
+            <Route path='/user/my-order' element={<UserOrdersPage />} />
+            <Route
+              path='/user/cart-details'
+              element={<UserCartDetailsPage />}
+            />
+            <Route
+              path='/user/order-details'
+              element={<UserOrderDetailsPage />}
+            />
+          </Route>
         </Route>
 
         {/* Admin Protected Routes */}
