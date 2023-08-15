@@ -10,7 +10,7 @@ const ProtectedRoutesComponent = ({ admin }) => {
     let userAuth = true;
     return userAuth ? (
       <>
-        <UserChatComponent />
+        {/* <UserChatComponent /> */}
         <Outlet />
       </>
     ) : (
