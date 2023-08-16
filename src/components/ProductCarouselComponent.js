@@ -6,6 +6,8 @@ const ProductCarouselComponent = () => {
     <Carousel>
       <Carousel.Item>
         <img
+          crossOrigin='anonymous'
+          style={{ height: '300px', objectFit: 'cover' }}
           className='d-block w-100'
           src='/images/carousel/carousel-1.png'
           alt='first slide'
@@ -17,6 +19,7 @@ const ProductCarouselComponent = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
+          style={{ height: '300px', objectFit: 'cover' }}
           className='d-block w-100'
           src='/images/carousel/carousel-2.png'
           alt='second slide'
@@ -28,6 +31,7 @@ const ProductCarouselComponent = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
+          style={{ height: '300px', objectFit: 'cover' }}
           className='d-block w-100'
           src='/images/carousel/carousel-3.png'
           alt='third slide'
