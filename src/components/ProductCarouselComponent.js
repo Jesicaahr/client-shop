@@ -1,7 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const ProductCarouselComponent = () => {
+  const cursorP = {
+    cursor: 'pointer',
+  };
   return (
     <Carousel>
       <Carousel.Item>
@@ -13,8 +17,10 @@ const ProductCarouselComponent = () => {
           alt='first slide'
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <LinkContainer style={cursorP} to='/product-details'>
+            <h3>Best Seller in Laptop Category</h3>
+          </LinkContainer>
+          <p>Dell Inspiration 15 3000 Laptop, 15.6 inch HD</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -25,8 +31,10 @@ const ProductCarouselComponent = () => {
           alt='second slide'
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <LinkContainer style={cursorP} to='/product-details'>
+            <h3>Best Seller in Book Category</h3>
+          </LinkContainer>
+          <p>World of Eric Carle, Hear Bear Roar 30-Button Animal Sound Book</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -37,9 +45,12 @@ const ProductCarouselComponent = () => {
           alt='third slide'
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <LinkContainer style={cursorP} to='/product-details'>
+            <h3>Best Seller in Camera Category</h3>
+          </LinkContainer>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            4K Camcorder Video Camera 60FPS 48MP Vlogging Camera for Youtube
+            Wifi 16X Digital Camera
           </p>
         </Carousel.Caption>
       </Carousel.Item>
