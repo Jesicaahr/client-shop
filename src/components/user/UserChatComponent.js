@@ -17,7 +17,7 @@ const UserChatComponent = () => {
         <div className='chat-form'>
           <div className='cht-msg'>
             {Array.from({ length: 20 }).map((_, id) => (
-              <div>
+              <div key={id}>
                 <p>
                   <b>You wrote:</b> Hello world! this is a toast message
                 </p>
